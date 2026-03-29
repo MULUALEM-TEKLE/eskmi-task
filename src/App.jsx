@@ -13,47 +13,12 @@ import Overlay from "./components/ui/Overlay"
 import HandsOnUI from "./components/ui/HandsOnUI"
 import HeroText from "./components/ui/HeroText"
 import ScrollHint from "./components/ui/ScrollHint"
+import LoadingScreen from "./components/ui/LoadingScreen"
 import BackgroundSystem from "./components/canvas/BackgroundSystem"
 
 const isHighEndAndDesktop = typeof navigator !== "undefined" && (navigator.hardwareConcurrency || 4) >= 4 && !/Mobi|Android/i.test(navigator.userAgent)
 
 gsap.registerPlugin(ScrollTrigger)
-
-const LoadingScreen = () => {
-	const { active, progress } = useProgress()
-	const [isVisible, setIsVisible] = useState(true)
-	const containerRef = useRef()
-
-	useEffect(() => {
-		if (!active && isVisible) {
-			const tl = gsap.timeline({
-				onComplete: () => setIsVisible(false),
-			})
-			tl.to(containerRef.current, {
-				opacity: 0,
-				duration: 1.5,
-				delay: 0.5,
-				ease: "power2.inOut",
-			})
-		}
-	}, [active, isVisible])
-
-	if (!isVisible) return null
-
-	return (
-		<div className="loading-screen" ref={containerRef}>
-			<div className="loading-content">
-				<h1>Samsung Galaxy S26</h1>
-				<div className="progress-bar-container">
-					<div
-						className="progress-bar"
-						style={{ width: `${progress}%` }}
-					/>
-				</div>
-			</div>
-		</div>
-	)
-}
 
 export default function App() {
 	const [mode, setMode] = useState("scroll") // 'scroll' | 'handson'
@@ -115,7 +80,7 @@ export default function App() {
 				<ScrollHint />
 			</div>
 
-			<Leva />
+			<Leva hidden />
 
 			{/* Canvas — interactive in hands-on mode */}
 			<div

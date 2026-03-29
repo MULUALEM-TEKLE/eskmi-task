@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import SpecPill from "./SpecPill"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -78,17 +79,13 @@ const AISection = () => {
 				<div ref={lineRef} className="spec-accent-line" />
 				<div className="spec-pills cols-3">
 					{features.map((f, i) => (
-						<div
+						<SpecPill
 							key={i}
-							className="spec-pill"
 							ref={(el) => (pillsRef.current[i] = el)}
-						>
-							<span className="spec-pill-icon">{f.icon}</span>
-							<div className="spec-pill-text">
-								<strong>{f.label}</strong>
-								<span>{f.desc}</span>
-							</div>
-						</div>
+							icon={f.icon}
+							label={f.label}
+							desc={f.desc}
+						/>
 					))}
 				</div>
 			</div>

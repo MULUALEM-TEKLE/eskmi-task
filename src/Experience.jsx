@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { Environment, ContactShadows, OrbitControls } from "@react-three/drei"
+import { Environment, OrbitControls } from "@react-three/drei"
 import { useThree } from "@react-three/fiber"
 import { useControls, folder } from "leva"
 import * as THREE from "three"
@@ -152,14 +152,6 @@ const Experience = ({ mode, activeColorIndex }) => {
 				activeColorIndex={activeColorIndex}
 				mode={mode}
 			/>
-
-			{/* <ContactShadows
-				position={[0, -4, 0]}
-				opacity={0.4}
-				scale={30}
-				blur={2.5}
-				far={10}
-			/> */}
 
 			{/* Post-processing — high-end devices only */}
 			{isHighEnd && (

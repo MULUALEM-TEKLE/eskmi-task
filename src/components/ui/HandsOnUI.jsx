@@ -5,14 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const colors = [
-	{ name: "Black", hex: "#1d1d1d" },
-	{ name: "Cobalt Violet", hex: "#5a5868" },
-	{ name: "Pink Gold", hex: "#dec5b8" },
-	{ name: "Silver Shadow", hex: "#a4a8ad" },
-	{ name: "Sky Blue", hex: "#a7c1d3" },
-	{ name: "White", hex: "#f0f0f0" },
-]
+import { COLORS as colors } from "../../constants"
 
 const HandsOnUI = ({ mode, setMode, activeColorIndex, setActiveColorIndex }) => {
 	const buttonRef = useRef()

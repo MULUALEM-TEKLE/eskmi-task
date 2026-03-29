@@ -7,14 +7,9 @@ import { useGSAP } from "@gsap/react"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const models = [
-	"/models/galaxy-s26-plus-black-cp.glb",
-	"/models/galaxy-s26-plus-cobalt-violet-cp.glb",
-	"/models/galaxy-s26-plus-pink-gold-cp.glb",
-	"/models/galaxy-s26-plus-silver-shadow-cp.glb",
-	"/models/galaxy-s26-plus-sky-blue-cp.glb",
-	"/models/galaxy-s26-plus-white-cp.glb",
-]
+import { MODELS as models } from "../../constants"
+
+export { models }
 
 /**
  * PhonesSwarm manages the 3D phone models.
@@ -55,7 +50,7 @@ const PhonesSwarm = ({ config, activeColorIndex, mode }) => {
 					child.material.transmission = 1.0
 					child.material.thickness = 0.05
 					child.material.roughness = 0.03
-					child.material.ior = 1.
+					child.material.ior = 1.0
 					child.material.metalness = 0
 					child.material.color.set("#ffffff")
 					child.material.depthWrite = false

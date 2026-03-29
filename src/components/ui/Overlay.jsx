@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import AISection from "./AISection"
+import SpecPill from "./SpecPill"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -112,13 +113,12 @@ const Overlay = ({ mode }) => {
 							{ icon: "◎", label: "IP68 Rated", desc: "Dust & water resistant" },
 							{ icon: "⟡", label: "6 Colors", desc: "Silver Shadow · Cobalt Violet · Sky Blue…" },
 						].map((f, i) => (
-							<div key={i} className="spec-pill">
-								<span className="spec-pill-icon">{f.icon}</span>
-								<div className="spec-pill-text">
-									<strong>{f.label}</strong>
-									<span>{f.desc}</span>
-								</div>
-							</div>
+							<SpecPill
+								key={i}
+								icon={f.icon}
+								label={f.label}
+								desc={f.desc}
+							/>
 						))}
 					</div>
 				</div>
@@ -140,13 +140,12 @@ const Overlay = ({ mode }) => {
 							{ icon: "◈", label: "Nightography", desc: "Vivid low-light video & photos" },
 							{ icon: "⟡", label: "Super Steady", desc: "Horizontal Lock · shake-free video" },
 						].map((f, i) => (
-							<div key={i} className="spec-pill">
-								<span className="spec-pill-icon">{f.icon}</span>
-								<div className="spec-pill-text">
-									<strong>{f.label}</strong>
-									<span>{f.desc}</span>
-								</div>
-							</div>
+							<SpecPill
+								key={i}
+								icon={f.icon}
+								label={f.label}
+								desc={f.desc}
+							/>
 						))}
 					</div>
 				</div>
@@ -171,13 +170,12 @@ const Overlay = ({ mode }) => {
 							{ icon: "⟡", label: "Vapor Chamber", desc: "29% better heat dissipation" },
 							{ icon: "◉", label: "Ray Tracing", desc: "Vulkan-optimised gaming graphics" },
 						].map((f, i) => (
-							<div key={i} className="spec-pill">
-								<span className="spec-pill-icon">{f.icon}</span>
-								<div className="spec-pill-text">
-									<strong>{f.label}</strong>
-									<span>{f.desc}</span>
-								</div>
-							</div>
+							<SpecPill
+								key={i}
+								icon={f.icon}
+								label={f.label}
+								desc={f.desc}
+							/>
 						))}
 					</div>
 				</div>
@@ -199,13 +197,12 @@ const Overlay = ({ mode }) => {
 							{ icon: "◎", label: "Wireless Charging", desc: "15W wireless · 4.5W reverse" },
 							{ icon: "◈", label: "+10 hrs longer", desc: "Than Galaxy S22 series" },
 						].map((f, i) => (
-							<div key={i} className="spec-pill">
-								<span className="spec-pill-icon">{f.icon}</span>
-								<div className="spec-pill-text">
-									<strong>{f.label}</strong>
-									<span>{f.desc}</span>
-								</div>
-							</div>
+							<SpecPill
+								key={i}
+								icon={f.icon}
+								label={f.label}
+								desc={f.desc}
+							/>
 						))}
 					</div>
 				</div>
@@ -227,13 +224,12 @@ const Overlay = ({ mode }) => {
 							{ icon: "◈", label: "Vision Booster", desc: "Crystal-clear in bright sunlight" },
 							{ icon: "⟡", label: "ProScaler", desc: "AI upscaling to QHD+" },
 						].map((f, i) => (
-							<div key={i} className="spec-pill">
-								<span className="spec-pill-icon">{f.icon}</span>
-								<div className="spec-pill-text">
-									<strong>{f.label}</strong>
-									<span>{f.desc}</span>
-								</div>
-							</div>
+							<SpecPill
+								key={i}
+								icon={f.icon}
+								label={f.label}
+								desc={f.desc}
+							/>
 						))}
 					</div>
 				</div>
