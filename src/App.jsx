@@ -49,16 +49,18 @@ export default function App() {
 		}
 	}, [])
 
-	// Handle mode transitions
+	const { active } = useProgress()
+
+	// Handle mode transitions and loading lock
 	useEffect(() => {
-		if (mode === "handson") {
-			document.body.classList.add("handson-active")
+		if (active || mode === "handson") {
+			if (mode === "handson") document.body.classList.add("handson-active")
 			if (lenisRef.current) lenisRef.current.stop()
 		} else {
 			document.body.classList.remove("handson-active")
 			if (lenisRef.current) lenisRef.current.start()
 		}
-	}, [mode])
+	}, [mode, active])
 
 	const isHandsOn = mode === "handson"
 
@@ -98,8 +100,8 @@ export default function App() {
 					}}
 					dpr={[1, Math.min(window.devicePixelRatio, 2)]}
 				>
-					{isHighEndAndDesktop && !isHandsOn && <BackgroundSystem />}
 					<Suspense fallback={null}>
+						{isHighEndAndDesktop && !isHandsOn && <BackgroundSystem />}
 						<Experience
 							mode={mode}
 							activeColorIndex={activeColorIndex}

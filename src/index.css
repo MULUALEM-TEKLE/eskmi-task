@@ -238,21 +238,18 @@ p, .description {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: transparent;
+	background: #000;
 	z-index: 9999;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: white;
-	pointer-events: none;
 }
 
 .loading-content {
-	position: absolute;
-	bottom: 15%;
 	text-align: center;
 	width: 80%;
-	max-width: 400px;
+	max-width: 600px;
 }
 
 .loading-content h1 {
@@ -312,6 +309,7 @@ p, .description {
 	z-index: 4;
 	pointer-events: none;
 	transition: opacity 0.5s ease;
+	mix-blend-mode: normal;
 }
 
 .circus-text {

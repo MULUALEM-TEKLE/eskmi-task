@@ -30,12 +30,14 @@ const LoadingScreen = () => {
 	return (
 		<div className="loading-screen" ref={containerRef}>
 			<div className="loading-content">
+				<p className="loading-eyebrow">Samsung</p>
+				<h1>Galaxy S26</h1>
 				<div className="progress-bar-container">
 					<div className="progress-bar" style={{ width: `${progress}%` }} />
 				</div>
-				<p className="loading-hint" style={{ opacity: progress < 100 ? 0 : 0.4 }}>
+				{/* <p className="loading-hint" style={{ opacity: progress < 100 ? 0 : 0.4 }}>
 					Scroll to explore
-				</p>
+				</p> */}
 			</div>
 		</div>
 	)
