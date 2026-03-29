@@ -193,8 +193,8 @@ const PhonesSwarm = ({ config, activeColorIndex, mode }) => {
 							x: config.introScale,
 							y: config.introScale,
 							z: config.introScale,
-							duration: 1.5,
-							ease: "power2.inOut",
+							duration: 1,
+							ease: "sine.inOut",
 						},
 						0.5,
 					)
@@ -206,8 +206,8 @@ const PhonesSwarm = ({ config, activeColorIndex, mode }) => {
 						x: 0,
 						y: -2 + li * config.stackSpreadY * 2,
 						z: li * config.stackSpreadZ,
-						duration: 1.5,
-						ease: "power2.inOut",
+						duration: 1,
+						ease: "sine.inOut",
 					},
 					0.5,
 				)
@@ -217,8 +217,8 @@ const PhonesSwarm = ({ config, activeColorIndex, mode }) => {
 						x: config.stackRotX - Math.PI / 2,
 						y: config.stackRotY,
 						z: config.stackRotZ,
-						duration: 1.5,
-						ease: "power2.inOut",
+						duration: 1,
+						ease: "sine.inOut",
 					},
 					0.5,
 				)
@@ -240,10 +240,10 @@ const PhonesSwarm = ({ config, activeColorIndex, mode }) => {
 						x: Math.cos(angle) * radius,
 						y: Math.sin(angle) * radius,
 						z: li * 0.1,
-						duration: 1.8,
-						ease: "power2.inOut",
+						duration: 1,
+						ease: "sine.inOut",
 					},
-					1.2,
+					1.5,
 				)
 				tl.to(
 					ref.current.rotation,
@@ -251,29 +251,29 @@ const PhonesSwarm = ({ config, activeColorIndex, mode }) => {
 						x: 0,
 						y: Math.PI / 2,
 						z: angle - Math.PI / 2,
-						duration: 1.8,
-						ease: "power2.inOut",
+						duration: 1,
+						ease: "sine.inOut",
 					},
-					1.2,
+					1.5,
 				)
 			})
 
-			// --- 3. Rotate and Pull Together (now overlaps) ---
+			// --- 3. Rotate and Pull Together ---
 			tl.to(
 				groupRef.current.rotation,
-				{ z: Math.PI * 2, duration: 1.5, ease: "power2.inOut" },
-				2.4,
+				{ z: Math.PI * 2, duration: 1, ease: "sine.inOut" },
+				2.5,
 			)
 			phoneRefs.current.forEach((ref) => {
 				tl.to(
 					ref.current.position,
-					{ x: 0, y: 0, z: 0, duration: 1.5, ease: "power2.inOut" },
-					2.4,
+					{ x: 0, y: 0, z: 0, duration: 1, ease: "sine.inOut" },
+					2.5,
 				)
 				tl.to(
 					ref.current.rotation,
-					{ x: 0, y: 0, z: 0, duration: 1.5, ease: "power2.inOut" },
-					2.4,
+					{ x: 0, y: 0, z: 0, duration: 1, ease: "sine.inOut" },
+					2.5,
 				)
 			})
 
@@ -303,10 +303,10 @@ const PhonesSwarm = ({ config, activeColorIndex, mode }) => {
 							x: 0,
 							y: 0,
 							z: 0,
-							duration: 1.5,
+							duration: 1,
 							ease: "power2.in",
 						},
-						3.4,
+						3.5,
 					)
 				}
 			})
@@ -316,18 +316,18 @@ const PhonesSwarm = ({ config, activeColorIndex, mode }) => {
 				tl.to(
 					phoneMaterials[activeColorIndex],
 					{ opacity: 1, duration: 0.1 },
-					3.4,
+					3.5,
 				)
 			}
 			tl.to(
 				mainPhone.position,
-				{ ...config.introPos, duration: 1.5, ease: "power3.inOut" },
-				3.4,
+				{ ...config.introPos, duration: 1.2, ease: "power3.inOut" },
+				3.5,
 			)
 			tl.to(
 				mainPhone.rotation,
-				{ ...config.introRot, duration: 1.5, ease: "power3.inOut" },
-				3.4,
+				{ ...config.introRot, duration: 1.2, ease: "power3.inOut" },
+				3.5,
 			)
 
 			// --- 5. Intro -> Cameras (4.5-6.5) ---

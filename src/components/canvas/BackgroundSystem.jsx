@@ -39,10 +39,13 @@ void main() {
 	float mouseDist = length(st - uMouse);
 	
 	// Create fluid noise offset
-	vec2 offset = vec2(noise(st + movement), noise(st - movement));
+	vec2 mOffset1 = vec2(movement);
+	vec2 mOffset2 = vec2(-movement);
+	vec2 offset = vec2(noise(st + mOffset1), noise(st + mOffset2));
 	
 	// Combine noise with mouse proximity
-	float n = noise(st * 1.5 + offset * 0.8 + (mouseDist * 0.2));
+	vec2 mDistVec = vec2(mouseDist * 0.2);
+	float n = noise(st * 1.5 + offset * 0.8 + mDistVec);
 	
 	// Enhance gradient blending
 	float blend = smoothstep(0.1, 1.4, n + (1.0 - mouseDist) * 0.2);
@@ -77,8 +80,8 @@ const BackgroundSystem = () => {
 			uTime: { value: 0 },
 			uMouse: { value: new THREE.Vector2(0, 0) },
 			uScroll: { value: 0 },
-			uColor1: { value: new THREE.Color("#010006") }, // Absolute deep black/purple
-			uColor2: { value: new THREE.Color("#130f2d") }, // Elegant subtle violet
+			uColor1: { value: new THREE.Color("#0f0c29") }, // Brighter, rich dark purple
+			uColor2: { value: new THREE.Color("#302b63") }, // Vibrant deep violet
 		}),
 		[],
 	)
@@ -126,7 +129,8 @@ const BackgroundSystem = () => {
 					vertexShader={vertexShader}
 					fragmentShader={fragmentShader}
 					uniforms={uniforms}
-					depthWrite={false}
+					depthTest={true}
+					depthWrite={true}
 				/>
 			</mesh>
 			
@@ -134,22 +138,22 @@ const BackgroundSystem = () => {
 			<group ref={sparklesRef}>
 				{/* Violet ambient dust */}
 				<Sparkles 
-					count={120} 
-					scale={35} 
-					size={2} 
-					speed={0.2} 
-					opacity={0.3} 
+					count={150} 
+					scale={40} 
+					size={6} 
+					speed={0.4} 
+					opacity={0.8} 
 					noise={1}
 					color="#8e82fe" 
 					position={[0, 0, -10]}
 				/>
 				{/* Silver/Blue rare motes */}
 				<Sparkles 
-					count={40} 
-					scale={25} 
-					size={4} 
-					speed={0.1} 
-					opacity={0.15} 
+					count={60} 
+					scale={30} 
+					size={8} 
+					speed={0.2} 
+					opacity={0.6} 
 					noise={0.5}
 					color="#a7c1d3" 
 					position={[0, 0, -5]}

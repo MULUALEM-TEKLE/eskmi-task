@@ -236,20 +236,23 @@ p, .description {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
-	background: #000;
+	background: transparent;
 	z-index: 9999;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: white;
+	pointer-events: none;
 }
 
 .loading-content {
+	position: absolute;
+	bottom: 15%;
 	text-align: center;
 	width: 80%;
-	max-width: 600px;
+	max-width: 400px;
 }
 
 .loading-content h1 {
@@ -392,13 +395,13 @@ p, .description {
 	font-size: 0.72rem;
 	font-weight: 600;
 	color: #8e82fe;
-	margin-bottom: 0.75rem;
+	margin-bottom: 0.25rem;
 }
 
 .hero-headline {
-	font-size: clamp(2.5rem, 5vw, 4.5rem);
+	font-size: clamp(2rem, 4vw, 3.5rem);
 	font-weight: 700;
-	line-height: 1.1;
+	line-height: 1.05;
 	letter-spacing: 0.15em;
 	text-transform: uppercase;
 	color: #fff;
@@ -417,9 +420,9 @@ p, .description {
 	font-size: clamp(0.9rem, 1.2vw, 1.15rem);
 	font-weight: 300;
 	letter-spacing: 0.08em;
-	line-height: 1.7;
+	line-height: 1.5;
 	color: rgba(255, 255, 255, 0.7);
-	margin-top: 2.5rem;
+	margin-top: 1rem;
 }
 
 /* Scroll Hint */

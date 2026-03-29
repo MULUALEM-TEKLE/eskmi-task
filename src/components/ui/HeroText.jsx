@@ -36,9 +36,7 @@ const HeroText = () => {
 			<div className="hero-text-inner">
 				<p className="hero-eyebrow">Samsung Galaxy S26</p>
 				<h2 className="hero-headline">
-					The phone that thinks
-					<br />
-					<em>with you.</em>
+					The phone that thinks <em>with you.</em>
 				</h2>
 				<p className="hero-subtext">
 					Experience the next generation of intuitive intelligence.<br/>

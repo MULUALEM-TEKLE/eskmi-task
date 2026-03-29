@@ -13,6 +13,9 @@ import Overlay from "./components/ui/Overlay"
 import HandsOnUI from "./components/ui/HandsOnUI"
 import HeroText from "./components/ui/HeroText"
 import ScrollHint from "./components/ui/ScrollHint"
+import BackgroundSystem from "./components/canvas/BackgroundSystem"
+
+const isHighEndAndDesktop = typeof navigator !== "undefined" && (navigator.hardwareConcurrency || 4) >= 4 && !/Mobi|Android/i.test(navigator.userAgent)
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -130,6 +133,7 @@ export default function App() {
 					}}
 					dpr={[1, Math.min(window.devicePixelRatio, 2)]}
 				>
+					{isHighEndAndDesktop && !isHandsOn && <BackgroundSystem />}
 					<Suspense fallback={null}>
 						<Experience
 							mode={mode}
