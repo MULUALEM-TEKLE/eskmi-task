@@ -396,11 +396,13 @@ p, .description {
 }
 
 .hero-headline {
-	font-size: clamp(1.6rem, 3.2vw, 2.8rem);
-	font-weight: 800;
-	line-height: 1.15;
-	letter-spacing: -0.02em;
+	font-size: clamp(2.5rem, 5vw, 4.5rem);
+	font-weight: 700;
+	line-height: 1.1;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
 	color: #fff;
+	text-shadow: 0 4px 16px rgba(0,0,0,0.5);
 }
 
 .hero-headline em {
@@ -409,6 +411,15 @@ p, .description {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
+}
+
+.hero-subtext {
+	font-size: clamp(0.9rem, 1.2vw, 1.15rem);
+	font-weight: 300;
+	letter-spacing: 0.08em;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.7);
+	margin-top: 2.5rem;
 }
 
 /* Scroll Hint */

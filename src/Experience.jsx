@@ -13,6 +13,7 @@ import {
 } from "@react-three/postprocessing"
 import { BlendFunction } from "postprocessing"
 import PhonesSwarm from "./components/canvas/PhonesSwarm"
+import BackgroundSystem from "./components/canvas/BackgroundSystem"
 
 const isHighEnd =
 	typeof navigator !== "undefined" && (navigator.hardwareConcurrency || 4) >= 4
@@ -110,6 +111,7 @@ const Experience = ({ mode, activeColorIndex }) => {
 
 	return (
 		<>
+			<BackgroundSystem />
 			<Environment preset="studio" intensity={1.2} />
 
 			<ambientLight intensity={0.4} />

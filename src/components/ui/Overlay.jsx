@@ -41,25 +41,25 @@ const Overlay = ({ mode }) => {
 			// Envelope wrapper fade-in
 			tl.fromTo(
 				overlay,
-				{ opacity: 0, y: 24, filter: "blur(8px)" },
-				{ opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out" },
+				{ autoAlpha: 0, y: 32, filter: "blur(24px)" },
+				{ autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 1.2, ease: "power2.inOut" },
 			)
 
 			// Fade in headline parts (excluding pills and line)
 			tl.fromTo(
 				headlineElements,
-				{ opacity: 0 },
-				{ opacity: 1, duration: 0.4, ease: "power2.out" },
-				"-=0.4"
+				{ autoAlpha: 0, filter: "blur(12px)" },
+				{ autoAlpha: 1, filter: "blur(0px)", duration: 0.8, ease: "power2.inOut" },
+				"-=0.7"
 			)
 
 			// Render accent line width
 			if (line) {
 				tl.fromTo(
 					line,
-					{ scaleX: 0, opacity: 0 },
-					{ scaleX: 1, opacity: 1, duration: 0.45, ease: "power2.out" },
-					"-=0.3",
+					{ scaleX: 0, autoAlpha: 0 },
+					{ scaleX: 1, autoAlpha: 1, duration: 0.8, ease: "power2.inOut" },
+					"-=0.6",
 				)
 			}
 
@@ -67,17 +67,17 @@ const Overlay = ({ mode }) => {
 			if (pills.length) {
 				tl.fromTo(
 					pills,
-					{ opacity: 0, y: 18, scale: 0.9, filter: "blur(6px)" },
+					{ autoAlpha: 0, y: 24, scale: 0.9, filter: "blur(12px)" },
 					{
-						opacity: 1,
+						autoAlpha: 1,
 						y: 0,
 						scale: 1,
 						filter: "blur(0px)",
-						duration: 0.4,
-						stagger: 0.065,
-						ease: "power2.out",
+						duration: 0.6,
+						stagger: 0.08,
+						ease: "power2.inOut",
 					},
-					"-=0.2",
+					"-=0.6",
 				)
 			}
 		})

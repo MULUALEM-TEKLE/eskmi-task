@@ -40,6 +40,10 @@ const HeroText = () => {
 					<br />
 					<em>with you.</em>
 				</h2>
+				<p className="hero-subtext">
+					Experience the next generation of intuitive intelligence.<br/>
+					Designed to beautifully blur the lines between technology and reality.
+				</p>
 			</div>
 		</div>
 	)

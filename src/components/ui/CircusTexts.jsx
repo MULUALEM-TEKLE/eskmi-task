@@ -25,59 +25,59 @@ const CircusTexts = () => {
 			},
 		})
 
-		const B = "blur(10px)"
+		const B = "blur(24px)"
 		const B0 = "blur(0px)"
 
 		// ── intro ──
 		tl.fromTo(
 			introRef.current,
 			{ autoAlpha: 0, y: 30, filter: B, scale: 0.9 },
-			{ autoAlpha: 1, y: 0, filter: B0, scale: 1, duration: 2.5, ease: "power3.out" },
+			{ autoAlpha: 1, y: 0, filter: B0, scale: 1, duration: 4, ease: "power2.inOut" },
 			0,
 		)
 		tl.to(
 			introRef.current,
-			{ autoAlpha: 0, y: -30, filter: B, scale: 1.05, duration: 2, ease: "power2.in" },
-			"+=0.5",
+			{ autoAlpha: 0, y: -30, filter: B, scale: 1.05, duration: 3, ease: "power2.inOut" },
+			"+=0.2",
 		)
 
 		// ── crafted ──
 		tl.fromTo(
 			craftedRef.current,
 			{ autoAlpha: 0, y: 30, filter: B, scale: 0.9 },
-			{ autoAlpha: 1, y: 0, filter: B0, scale: 1, duration: 2.5, ease: "power3.out" },
-			"-=0.5",
+			{ autoAlpha: 1, y: 0, filter: B0, scale: 1, duration: 4, ease: "power2.inOut" },
+			"-=1.5",
 		)
 		tl.to(
 			craftedRef.current,
-			{ autoAlpha: 0, y: -30, filter: B, scale: 1.05, duration: 2, ease: "power2.in" },
-			"+=0.8",
+			{ autoAlpha: 0, y: -30, filter: B, scale: 1.05, duration: 3, ease: "power2.inOut" },
+			"+=0.2",
 		)
 
 		// ── colors ──
 		tl.fromTo(
 			colorsRef.current,
 			{ autoAlpha: 0, y: 30, filter: B, scale: 0.9 },
-			{ autoAlpha: 1, y: 0, filter: B0, scale: 1, duration: 2.5, ease: "power3.out" },
-			"-=0.5",
+			{ autoAlpha: 1, y: 0, filter: B0, scale: 1, duration: 4, ease: "power2.inOut" },
+			"-=1.5",
 		)
 		tl.to(
 			colorsRef.current,
-			{ autoAlpha: 0, y: -30, filter: B, scale: 1.05, duration: 2, ease: "power2.in" },
-			"+=0.8",
+			{ autoAlpha: 0, y: -30, filter: B, scale: 1.05, duration: 3, ease: "power2.inOut" },
+			"+=0.2",
 		)
 
 		// ── future ──
 		tl.fromTo(
 			futureRef.current,
 			{ autoAlpha: 0, y: 30, filter: B, scale: 0.9 },
-			{ autoAlpha: 1, y: 0, filter: B0, scale: 1, duration: 2.5, ease: "power3.out" },
-			"-=0.5",
+			{ autoAlpha: 1, y: 0, filter: B0, scale: 1, duration: 4, ease: "power2.inOut" },
+			"-=1.5",
 		)
 		tl.to(
 			futureRef.current,
-			{ autoAlpha: 0, y: -30, filter: B, scale: 1.05, duration: 2, ease: "power2.in" },
-			"+=0.8",
+			{ autoAlpha: 0, y: -30, filter: B, scale: 1.05, duration: 3, ease: "power2.inOut" },
+			"+=0.2",
 		)
 
 		// Expand timeline so all this maps carefully over the 35% mark
