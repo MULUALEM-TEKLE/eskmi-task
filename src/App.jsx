@@ -87,7 +87,7 @@ export default function App() {
 				className={`canvas-wrapper ${isHandsOn ? "interactive" : ""}`}
 			>
 				<Canvas
-					shadows
+					shadows={{ type: THREE.PCFShadowMap }}
 					camera={{ position: [0, 0, 12], fov: 35 }}
 					gl={{
 						antialias: true,
