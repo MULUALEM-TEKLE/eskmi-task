@@ -309,7 +309,7 @@ p, .description {
 	z-index: 4;
 	pointer-events: none;
 	transition: opacity 0.5s ease;
-	mix-blend-mode: normal;
+	/* Removed screen blend to ensure extreme readability against bright phones */
 }
 
 .circus-text {
@@ -323,12 +323,13 @@ p, .description {
 }
 
 .circus-text h2 {
-	font-size: clamp(1.2rem, 2.5vw, 2rem);
-	font-weight: 300;
+	font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+	font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 0.3em;
+	letter-spacing: 0.35em;
 	color: white;
 	text-align: center;
+	text-shadow: 0 4px 30px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.5);
 }
 
 .circus-eyebrow {
@@ -343,6 +344,10 @@ p, .description {
 .circus-text.centered {
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.circus-text.crafted-pos {
+	top: 38%;
 }
 
 .circus-text.top-aligned {
@@ -360,11 +365,12 @@ p, .description {
 }
 
 .circus-text .sub-text {
-	font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-	font-weight: 300;
-	letter-spacing: 0.1em;
-	opacity: 0.7;
+	font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+	font-weight: 400;
+	letter-spacing: 0.12em;
+	opacity: 0.85;
 	text-transform: none;
+	text-shadow: 0 2px 20px rgba(0,0,0,0.9);
 }
 
 /* Hero Text */

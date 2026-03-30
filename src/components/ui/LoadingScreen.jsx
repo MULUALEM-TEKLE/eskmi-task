@@ -18,8 +18,10 @@ const LoadingScreen = () => {
 			const tl = gsap.timeline({ onComplete: () => setIsVisible(false) })
 			tl.to(containerRef.current, {
 				opacity: 0,
-				duration: 1.2,
-				delay: 0.4,
+				filter: "blur(40px)",
+				scale: 1.1,
+				duration: 2.0,
+				delay: 0.2,
 				ease: "power2.inOut",
 			})
 		}

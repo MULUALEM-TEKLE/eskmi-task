@@ -94,7 +94,7 @@ const CircusTexts = () => {
 					<p className="sub-text">Smarter. Faster. Bolder.</p>
 				</div>
 			</div>
-			<div ref={craftedRef} className="circus-text centered">
+			<div ref={craftedRef} className="circus-text centered crafted-pos">
 				<div className="circus-text-inner">
 					<span className="circus-eyebrow">Precision Engineering</span>
 					<h2>Crafted for Perfection</h2>
